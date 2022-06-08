@@ -20,8 +20,24 @@
 //     49,         'Buzz', 50
 //   ]
 
+function isMult(num, mult) {
+  return num % mult === 0;
+}
+
 function fizzBuzz(number) {
   //you code here...
+  const result = [];
+
+  for (let i = 1; i <= number; i++) {
+    const isMultThree = isMult(i, 3);
+    const isMultFive = isMult(i, 5);
+    if (isMultThree && isMultFive) result.push("FizzBuzz", i);
+    else if (isMultThree) result.push("Fizz", i);
+    else if (isMultFive) result.push("Buzz", i);
+    else result.push(i);
+  }
+
+  return result;
 }
 
 module.exports = fizzBuzz;
