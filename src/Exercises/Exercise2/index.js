@@ -13,6 +13,20 @@
 
 function updateData(currentObject, newDataObject) {
   //you code here...
+  const newDataArr = Object.entries(newDataObject);
+  const currentDataArr = Object.entries(currentObject);
+  let result = { ...currentObject };
+
+  for (let i = 0; i < newDataArr.length; i++) {
+    for (let j = 0; j < currentDataArr.length; j++) {
+      if (currentDataArr[j][0] === newDataArr[i][0]) {
+        result = { ...result, [newDataArr[i][0]]: newDataArr[i][1] };
+        break;
+      }
+    }
+  }
+
+  console.log(result);
 }
 
 module.exports = updateData;
