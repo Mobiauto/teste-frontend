@@ -26,7 +26,7 @@ function updateData(currentObject, newDataObject) {
     }
   }
 
-  console.log(result);
+  return result;
 }
 
 module.exports = updateData;

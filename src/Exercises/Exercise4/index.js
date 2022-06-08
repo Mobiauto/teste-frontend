@@ -26,14 +26,16 @@ function isMult(num, mult) {
 
 function fizzBuzz(number) {
   //you code here...
-  let result;
-  const isMultThree = isMult(number, 3);
-  const isMultFive = isMult(number, 5);
+  const result = [];
 
-  if (isMultThree && isMultFive) result = "FizzBuzz";
-  else if (isMultThree) result = "Fizz";
-  else if (isMultFive) result = "Buzz";
-  else result = number;
+  for (let i = 1; i <= number; i++) {
+    const isMultThree = isMult(i, 3);
+    const isMultFive = isMult(i, 5);
+    if (isMultThree && isMultFive) result.push("FizzBuzz", i);
+    else if (isMultThree) result.push("Fizz", i);
+    else if (isMultFive) result.push("Buzz", i);
+    else result.push(i);
+  }
 
   return result;
 }
