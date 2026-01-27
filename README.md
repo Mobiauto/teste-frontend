@@ -1,3 +1,5 @@
+![Badge confidential](http://img.shields.io/static/v1?label=SECURITY&message=PUBLICO&color=green&style=for-the-badge)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
