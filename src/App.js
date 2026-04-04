@@ -1,9 +1,10 @@
-import Slider from './Exercises/Exercise6'
+import React from "react";
+import Slider from "./Exercises/Exercise6";
 
 function App() {
-  return <>
-    <Slider />
-  </>
+  React.useEffect(() => {}, []);
+
+  return <Slider />;
 }
 
 export default App;

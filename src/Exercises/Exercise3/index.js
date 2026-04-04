@@ -37,8 +37,38 @@
 //   }
 // ]
 
+function translate(word) {
+  switch (word) {
+    case "Male":
+      return "Homem";
+    case "Female":
+      return "Mulher";
+    case "Human":
+      return "Humano";
+    default:
+      return word;
+  }
+}
+
 async function getRicAndMortyCharacters() {
-  //you code here...
+  const url = "https://rickandmortyapi.com/api/character";
+  try {
+    const res = await fetch(url);
+    const { results } = await res.json();
+    const slicedResults = results.slice(0, 5);
+    const mappedResults = slicedResults.map((caracter) => {
+      return {
+        nome: caracter.name,
+        avatar: caracter.image,
+        genero: translate(caracter.gender),
+        especie: translate(caracter.species),
+      };
+    });
+    return mappedResults;
+  } catch (err) {
+    console.log(err.message);
+    return [];
+  }
 }
 
 module.exports = getRicAndMortyCharacters;
